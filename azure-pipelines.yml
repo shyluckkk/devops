@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: hello
+pool: 'hello'
 
 steps:
 - task: Maven@4
