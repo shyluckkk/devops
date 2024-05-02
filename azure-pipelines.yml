@@ -6,13 +6,13 @@
 trigger:
 - main
 
-pool: model
+pool: shyluck
 
 steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'test'
+    goals: 'compile'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
