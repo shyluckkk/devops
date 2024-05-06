@@ -7,8 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
-
+  shyluck
 steps:
 - task: Maven@4
   inputs:
