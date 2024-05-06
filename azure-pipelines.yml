@@ -9,8 +9,14 @@ trigger:
 pool:
   shyluck
 steps:
-- task: PowerShell@2
+- task: Maven@3
   inputs:
-    targetType: 'inline'
-    script: |
-      mvn compile
+    mavenPomFile: 'pom.xml'
+    goals: 'compile'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
